@@ -1,4 +1,4 @@
-/* navigatie*/
+/* navigatie start*/
 
 ul {
     display: flex;
@@ -15,14 +15,9 @@ li {
     padding: 1em;
 }
 
-
-/* li:nth-of-type(1) {
-height: 3em;
-} */
-
 ul > li > a:hover {
     color: hotpink;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 li > a > img {
@@ -33,8 +28,10 @@ li > a {
 
     text-decoration: none;
     color: black;
-    /*    font-size: 1.5rem*/
+
 }
+
+/* navigatie eind*/
 
 /*Main Content*/
 
@@ -72,7 +69,7 @@ h4.yay {
 
 
 body > p {
-    /*    max-width: 20em;*/
+
     padding-left: 0.2em;
     margin-left: auto;
     margin-right: auto;
@@ -90,48 +87,15 @@ article > p {
     color: white;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
 
-}
-
-main > p {
-    text-align: left;
-}
-
-main > img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-/*TEKST RESPONSIVE MAKEN*/
-
-/* @media (min-width: 10em) {
-    main > p {
-        color: hotpink;
-    }
-}
-
-@media (min-width: 10em) {
-    main > p {
-        color: hotpink;
-
-    }
-}
-@media (min-width: 10em) {
-    main > p {
-        color: hotpink;
-
-    }
-}
- */
 
 article > a > img {
-    /*     max-height: 100%; */
     height: auto;
     width: 100%
 }
+
+
+/*Article shake animation start */
 
 article:hover {
     animation: shake 0.5s;
@@ -172,6 +136,10 @@ article:hover {
         transform: translate(1px, -2px) rotate(-1deg);
     }
 }
+
+/*Article shake animation eind */
+
+/*Grid Responsive start */
 
 /* Ik wil 4 kolomen naast elkaar zetten en alles moet dezelfde grote hebben. Om dit te doen gebruik ik een grid van 12 keer 1fr dan is alles gelijk ingedeeld */
 
@@ -273,54 +241,31 @@ article:nth-child(even) {
     }
 }
 
-/* /@media (min-width: 30em) {
-    section {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 1em;
-        margin-left: 2em;
-    }
+/*Grid Responsive eind */
+
+/* Detailpagina start*/
+
+main > img {
+    max-width: 30em;
+    height: auto;
 }
 
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-@media (min-width: 40em) {
-    section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1em;
-        margin-left: 2em;
-        background-color: aqua;
-    }
 }
 
-
-/@media (min-width: 50em) {
-    section {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 1em;
-        margin-left: 2em;
-        background-color: red;
-    }
+main > p {
+    max-width: 30em;
+    text-align: left;
+    margin-left: 1em;
 }
 
-@media (min-width: 60em) {
-    section {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-gap: 1em;
-        margin-left: 2em;
+/* Detailpagina eind*/
 
-    }
-}
-*/
-
-/*
-li > a > img {
-    max-height: 100px;
-*/
-
-/* Formulier*/
+/* Formulier start*/
 
 form {
     display: flex;
@@ -367,7 +312,7 @@ input {
     margin-bottom: 1em;
     width: 100%;
     transition: all 2s;
-    z-index: 2;
+
 }
 
 input:valid {
@@ -388,6 +333,11 @@ input:disabled {
     background-color: #f9f9f9;
 }
 
+label {
+    text-transform: uppercase;
+    font-family: 'Tajawal', sans-serif;
+}
+
 button {
     background-color: rgba(219, 112, 147, 1);
     border: none;
@@ -405,22 +355,35 @@ button:focus {
     transform: scale(1.01, 1.01);
 }
 
-/* body > p {
-    margin-right: 2em;
-    margin-left: 1em;
-} */
+/* Formulier eind*/
 
-body > div {
+body > p {
     max-width: 80em;
     margin: auto;
+}
+
+/* SVG ANIMATIE start*/
+
+/* https://www.youtube.com/watch?v=vJNVramny9k */
+
+#camera {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
 }
 
-/* @media (min-width: 10em) {
-    body > p {
+#camera path {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: 500px;
+    animation: line-anim 5s ease forwards;
+}
 
-        margin-right: 2em;
-        margin-left: 1em;
-    } */
+@keyframes line-anim {
+    to {
+        stroke-dashoffset: 0px;
+    }
 
-/* Jowently logo animationr*/
+}
